@@ -6,4 +6,12 @@
 
 (defn high-and-low
   [s]
-  (read-string s))
+  (let [nums (map #(Integer/parseInt %) (clojure.string/split s #" "))]
+    (str (apply max nums) " " (apply min nums))))
+
+;; This program works as follows:
+;; Splits the input string on spaces.
+;; Converts each piece into an integer.
+;; Finds the maximum and minimum with apply max and apply min.
+;; Returns them in a string "max min" format.
+
